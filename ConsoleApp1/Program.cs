@@ -23,12 +23,12 @@
                 if (player == 2)
                 {
                     player = 1;
-                    EnterXorO(player, input);
+                    EnterXorO('O', input);
                 }
                 else if (player == 1)
                 {
                     player = 2;
-                    EnterXorO(player, input);
+                    EnterXorO('X', input);
                 }
                 SetPlayboard();
 
@@ -138,15 +138,8 @@
             turns++;
         }
 
-        public static void EnterXorO(int player, int input)
+        public static void EnterXorO(char playerSign, int input)
         {
-            char playerSign = ' ';
-
-            if (player == 1)
-                playerSign = 'X';
-            else if (player == 2)
-                playerSign = 'O';
-
             switch (input)
             {
                 case 1: playboard[0, 0] = playerSign; break;
